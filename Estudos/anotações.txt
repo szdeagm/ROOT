@@ -1,1 +1,11 @@
-double = 
+-TMatch = biblioteca do ROOT
+
+-double = ponto flutuante de dupla precisão, ou seja valor mais preciso depois da vírgula pois usa 64 bits. Ex: 0,50000
+
+-using = cria um apelido
+
+-std::vector<aaaa> = guardar valor no vetor aaaa
+
+-pVec = função chamada de lambda
+
+-auto&& x:v = loop em intervalos
