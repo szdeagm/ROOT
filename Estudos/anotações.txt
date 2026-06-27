@@ -9,3 +9,45 @@
 -pVec = função chamada de lambda
 
 -auto&& x:v = loop em intervalos
+
+Exemplo:
+root [18] using doubles = std::vector<double>;
+root [20] auto pVec = [] (const doubles& v){for(auto&& x:v) cout << x << endl;};
+root [21] doubles v{0,3,5,4,1,2};
+root [22] pVec(v);
+#saida:
+0
+3
+5
+4
+1
+2
+root [25] std::sort(v.begin(),v.end());
+root [26] pVec(v);
+0
+1
+2
+3
+4
+5
+root [27] std::sort(v.begin(),v.end(),[](double a, double b){return a>b;});
+root [28] pVec(v)
+5
+4
+3
+2
+1
+0
+
+Geração aleatória de números:
+
+root [0] std::default_random_engine generator;
+root [1] std::normal_distribution<double> distribution(0.,1.);
+root [2] distribution(generator)
+(std::normal_distribution<double>::result_type) -1.219658e-01
+root [3] distribution(generator)
+(std::normal_distribution<double>::result_type) -1.086818e+00
+root [4] distribution(generator)
+(std::normal_distribution<double>::result_type) 6.842899e-01
+
+ ---Transforma os números brutos gerados na linha 0 em um número que siga os parametros gaussianos. NO qual 0. é a média e 1. o desvio padrão. Assim temos os valores  aparaceram a cima:
